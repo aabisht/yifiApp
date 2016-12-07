@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @ngdoc overview
  * @name yifiAppApp
@@ -8,28 +6,30 @@
  *
  * Main module of the application.
  */
-angular
-  .module('yifiAppApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+(function () {
+  'use strict';
+  angular
+    .module('yifiAppApp', [
+      'ngAnimate',
+      'ngCookies',
+      'ngResource',
+      'ngSanitize',
+      'ngTouch',
+      'ui.router'
+    ])
+    .config(['$stateProvider', function ($stateProvider) {
+      $stateProvider
+        .state('home', {
+          url: '/home',
+          templateUrl: 'views/home.html',
+          controller: 'HomeController',
+          controllerAs: 'HomeCtrl'
+        })
+        // .state('about', {
+        //   url: '/about',
+        //   templateUrl: 'views/about.html',
+        //   controller: 'AboutController',
+        //   controllerAs: 'AboutCtrl'
+        // });
+    }]);
+})();
