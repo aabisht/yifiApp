@@ -1,4 +1,6 @@
 .header-container-wrapper {
+  min-height: 51px;
+  margin-bottom: 20px;
   .navbar {
     padding-left: 5%;
     padding-right: 5%;
@@ -27,6 +29,33 @@
       .form-control {
         padding-left: 30px;
       }
+    }
+  }
+}
+
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .header-container-wrapper {
+    .nav {
+      > li {
+        > a {
+          padding-left: 10px;
+          padding-right: 10px;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .header-container-wrapper {
+    .navbar {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .navbar-header {
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 }
