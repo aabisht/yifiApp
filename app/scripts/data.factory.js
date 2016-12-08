@@ -11,8 +11,8 @@
 
   angular
     .module('yifiAppApp')
-    .factory('dataFactory', ['$q',
-      function ($q) {
+    .factory('dataFactory', ['$q', '$http',
+      function ($q, $http) {
 
         return {
 

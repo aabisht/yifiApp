@@ -1,1 +1,23 @@
-<h1>Home</h1>
+<section class="home-slider-container-wrapper" data-nf-if="HomeCtrl.movieData">
+  <div class="home-slider-container">
+    <div uib-carousel active="HomeCtrl.sliderConfiguration.active" interval="HomeCtrl.sliderConfiguration.interval" no-wrap="HomeCtrl.sliderConfiguration.noWrapSlides">
+      <div uib-slide ng-repeat="sliderMovieData in HomeCtrl.movieData | orderBy: '-rating' | limitTo: 5" index="sliderMovieData.id">
+        <div class="background-image" style="background-image: url('{{sliderMovieData.background_image_original}}')"></div>
+        <div class="background-overlay"></div>
+        <div class="slider-content-wrapper">
+          <div class="slider-content text-center">
+            <h3 class="slider-title">{{ sliderMovieData.title_english }}</h3>
+            <img data-ng-src="{{ sliderMovieData.large_cover_image }}" alt=" {{ sliderMovieData.title_long }} ">
+            <h5><strong>Release Date: </strong> {{ sliderMovieData.year }}</h5>
+            <h5><strong>Movie Rating: </strong> {{ sliderMovieData.rating }}</h5>
+            <div class="list-category-wrapper" data-ng-if="sliderMovieData.genres">
+              <ul class="list-category list-inline">
+                <li data-ng-repeat="generName in sliderMovieData.genres">{{ generName }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -10,8 +10,8 @@
 
   angular
     .module('yifiAppApp')
-    .controller('HomeController', ['$state', 'dataFactory',
-      function ($state, dataFactory) {
+    .controller('HomeController', ['$state', 'dataFactory', 'CONSTANTS',
+      function ($state, dataFactory, CONSTANTS) {
 
         var self = this;
 
@@ -24,6 +24,21 @@
          * @description function is to use initialize the data
          */
         function init() {
+          var dataURL = CONSTANTS.BASE_API_URL + "list_movies.json";
+
+          self.sliderConfiguration = {
+            active: "0",
+            myInterval: "5000",
+            noWrapSlides: "false"
+          };
+
+          dataFactory.getData(dataURL)
+            .then(function (responseData) {
+              self.movieData = responseData.data.movies;
+              // console.log(self.movieData);
+            }, function (error) {
+              error.log(error)
+            })
 
         }
 
