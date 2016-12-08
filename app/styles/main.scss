@@ -1,6 +1,13 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+@import "https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,500,500i,700,900";
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 
+@import "variable";
 @import "mixin";
 @import "header";
 @import "home-slider";
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
