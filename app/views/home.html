@@ -7,7 +7,9 @@
         <div class="slider-content-wrapper">
           <div class="slider-content text-center">
             <h2 class="slider-title text-uppercase">{{ sliderMovieData.title_english }}</h2>
-            <img class="slider-movie-image" data-ng-src="{{ sliderMovieData.large_cover_image }}" alt=" {{ sliderMovieData.title_long }} ">
+            <div class="slider-movie-image-wrapper">
+              <img class="slider-movie-image" data-ng-src="{{ sliderMovieData.large_cover_image }}" alt=" {{ sliderMovieData.title_long }} ">
+            </div>
             <h4><strong>Release Date: </strong> {{ sliderMovieData.year }}</h4>
             <h4><strong>Movie Rating: </strong> {{ sliderMovieData.rating }}</h4>
             <div class="list-category-wrapper" data-ng-if="sliderMovieData.genres">

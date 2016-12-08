@@ -67,12 +67,17 @@
     }
   }
 
-  .slider-movie-image {
+  .slider-movie-image-wrapper {
     height: calc(100vh - 350px);
     margin: 20px 0;
-    background-color: $white;
-    padding: 6px;
-    @include border-radius(3px);
+
+    .slider-movie-image {
+      background-color: $white;
+      padding: 6px;
+      @include border-radius(3px);
+      width: auto;
+      height: 100%;
+    }
   }
 
   .carousel-indicators {
