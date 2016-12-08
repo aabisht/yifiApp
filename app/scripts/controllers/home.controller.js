@@ -1,6 +1,8 @@
 /**
  * @ngdoc function
  * @name yifiAppApp.controller:HomeController
+ * @requires dataFactory
+ * @requires CONSTANTS
  * @description
  * # HomeController
  * Controller of the yifiAppApp
@@ -10,8 +12,8 @@
 
   angular
     .module('yifiAppApp')
-    .controller('HomeController', ['$state', 'dataFactory', 'CONSTANTS',
-      function ($state, dataFactory, CONSTANTS) {
+    .controller('HomeController', ['dataFactory', 'CONSTANTS',
+      function (dataFactory, CONSTANTS) {
 
         var self = this;
 
@@ -27,9 +29,9 @@
           var dataURL = CONSTANTS.BASE_API_URL + "list_movies.json";
 
           self.sliderConfiguration = {
-            active: "0",
-            myInterval: "5000",
-            noWrapSlides: "false"
+            active: 0,
+            myInterval: 5000,
+            noWrapSlides: false
           };
 
           dataFactory.getData(dataURL)

@@ -1,7 +1,7 @@
-<section class="home-slider-container-wrapper" data-nf-if="HomeCtrl.movieData">
-  <div class="home-slider-container">
+<section class="home-slider-container-wrapper">
+  <div class="home-slider-container" data-nf-if="HomeCtrl.movieData">
     <div uib-carousel active="HomeCtrl.sliderConfiguration.active" interval="HomeCtrl.sliderConfiguration.interval" no-wrap="HomeCtrl.sliderConfiguration.noWrapSlides">
-      <div uib-slide ng-repeat="sliderMovieData in HomeCtrl.movieData | orderBy: '-rating' | limitTo: 5" index="sliderMovieData.id">
+      <div uib-slide ng-repeat="sliderMovieData in HomeCtrl.movieData | orderBy: '-rating' | limitTo: 5 track by sliderMovieData.id" index="sliderMovieData.id">
         <div class="background-image" style="background-image: url('{{sliderMovieData.background_image_original}}')"></div>
         <div class="background-overlay"></div>
         <div class="slider-content-wrapper">
