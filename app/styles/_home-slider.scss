@@ -70,6 +70,7 @@
   .slider-movie-image-wrapper {
     height: calc(100vh - 350px);
     margin: 20px 0;
+    display: inline-block;
 
     .slider-movie-image {
       background-color: $white;

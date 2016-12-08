@@ -6,8 +6,32 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "mixin";
 @import "header";
 @import "home-slider";
+@import "movie-list";
 
 
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: lighten($black, 50%);
+
+  &:hover, &:focus {
+    color: lighten($black, 40%);
+    text-decoration: none;
+  }
+}
+
+.container {
+  width: 100%;
+
+  @media (min-width: $screen-sm-min) {
+    max-width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    max-width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    max-width: $container-lg;
+  }
 }

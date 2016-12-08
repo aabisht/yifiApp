@@ -1,0 +1,19 @@
+.light-grey-bg {
+  background-color: darken($white, 5%);
+  padding: 30px 0;
+}
+
+.home-movie-listings-wrapper {
+
+  .page-title {
+    margin-bottom: 30px;
+
+    h3 {
+      margin: 0;
+    }
+
+    .more {
+      line-height: 26px;
+    }
+  }
+}
