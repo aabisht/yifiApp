@@ -37,8 +37,8 @@
         </div>
       </div>
       <div class="row movie-listing">
-        <div class="col-lg-3 col-md-4 col-sm-6 movie-list" data-ng-repeat="movieData in HomeCtrl.movieData | limitTo: 8 track by $index" data-ng-class="'movie-list-'+($index+1)">
-          <div class="movie-wrapper">
+        <div class="col-lg-3 col-md-4 col-sm-6 movie-list" data-ng-repeat="movieData in HomeCtrl.movieData | limitTo: 9 track by $index" data-ng-class="'movie-list-'+($index+1)">
+          <div class="movie-wrapper text-center">
             <a href="javascript:;" class="browse-movie-link">
               <figure>
                 <img src="" data-ng-src="{{ movieData.medium_cover_image }}" alt="{{ movieData.title_long }}">
@@ -52,7 +52,7 @@
                 </figcaption>
               </figure>
             </a>
-            <div class="browse-movie-bottom text-center">
+            <div class="browse-movie-bottom">
               <a href="javascript:;" class="browse-movie-title" title="{{ movieData.title_english }}">{{ movieData.title_english }}</a>
               <div class="browse-movie-year">{{movieData.year}}</div>
               <div class="browse-movie-tags">
@@ -65,3 +65,15 @@
     </div>
   </div>
 </section>
+<!--Home Upcoming Movies-->
+<!--<section class="home-movie-listings-wrapper">-->
+  <!--<div class="home-movie-listings">-->
+    <!--<div class="container">-->
+      <!--<div class="row page-title">-->
+        <!--<div class="col-sm-12">-->
+          <!--<h3>Upcoming YIFY Movies</h3>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</section>-->
