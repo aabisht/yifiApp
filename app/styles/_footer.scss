@@ -1,0 +1,14 @@
+.footer-container {
+  background-color: lighten($black, 10%);
+  border-top: 1px solid lighten($black, 8%);
+  padding: 10px 0;
+  color: $white;
+
+  p {
+    margin-bottom: 0;
+
+    & + p{
+      margin-bottom: 10px;
+    }
+  }
+}
