@@ -1,0 +1,117 @@
+<!--Browser Movie Header Search-->
+<section class="browser-movie-search-content-wrapper dark-grey-bg">
+  <div class="browser-movie-search-wrapper">
+    <div class="container-fluid">
+      <form name="advanceSearch">
+        <div class="row">
+          <div class="col-sm-9">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="movieName">Search Movie Name</label>
+                  <input type="text" id="movieName" class="form-control" placeholder="Enter Movie Name">
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label for="movieQuality">Quality</label>
+                  <input type="hidden" class="form-control">
+                  <div class="btn-group" uib-dropdown keyboard-nav>
+                    <button id="movieQuality" type="button" class="btn btn-transparent" uib-dropdown-toggle><span>All</span><i class="glyphicon glyphicon-chevron-down"></i></button>
+                    <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                      <li role="menuitem"><a href="javascript:;" data-quality="all">All</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-quality="720p">720p</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-quality="720p">720p</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-quality="3D">3D</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label for="movieGenre">Genre</label>
+                  <input type="hidden" class="form-control">
+                  <div class="btn-group" uib-dropdown keyboard-nav>
+                    <button id="movieGenre" type="button" class="btn btn-transparent" uib-dropdown-toggle><span>All</span><i class="glyphicon glyphicon-chevron-down"></i></button>
+                    <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                      <li role="menuitem"><a href="javascript:;" data-title="all">All</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="action">Action</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="adventure">Adventure</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="animation">Animation</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="biography">Biography</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="comedy">Comedy</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="crime">Crime</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="documentary">Documentary</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="drama">Drama</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="family">Family</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="fantasy">Fantasy</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="film-noir">Film-Noir</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="game-show">Game-Show</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="history">History</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="horror">Horror</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="music">Music</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="musical">Musical</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="mystery">Mystery</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="news">News</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="reality-tv">Reality-TV</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="romance">Romance</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="sci-fi">Sci-Fi</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="sport">Sport</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="talk-show">Talk-Show</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="thriller">Thriller</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="war">War</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-title="western">Western</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label for="movieRating">Rating</label>
+                  <input type="hidden" class="form-control">
+                  <div class="btn-group" uib-dropdown keyboard-nav>
+                    <button id="movieRating" type="button" class="btn btn-transparent" uib-dropdown-toggle><span>All</span><i class="glyphicon glyphicon-chevron-down"></i></button>
+                    <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                      <li role="menuitem"><a href="javascript:;" data-rating="0">All</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-rating="9">9+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-rating="8">8+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-rating="7">7+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-rating="6">6+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-rating="5">5+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-rating="4">4+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-rating="3">3+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-rating="2">2+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-rating="1">1+</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="form-group">
+                  <label for="movieOrderBy">Order By</label>
+                  <input type="hidden" class="form-control">
+                  <div class="btn-group" uib-dropdown keyboard-nav>
+                    <button id="movieOrderBy" type="button" class="btn btn-transparent" uib-dropdown-toggle><span>Latest</span><i class="glyphicon glyphicon-chevron-down"></i></button>
+                    <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                      <li role="menuitem"><a href="javascript:;" data-order="latest">Latest</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-order="oldest">Oldest</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-order="seeds">Seeds</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-order="peers">Peers</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-order="year">Year</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-order="rating">Rating</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-order="likes">Likes</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-order="alphabetical">Alphabetical</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-order="downloads">Downloads</a></li>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 search-btn-wrapper">
+            <button type="button" class="btn btn-block btn-success">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

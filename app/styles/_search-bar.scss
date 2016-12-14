@@ -1,0 +1,101 @@
+.dark-grey-bg {
+  background-color: lighten($black, 10%);
+  padding: 30px 0;
+  color: lighten($black, 60%);
+}
+
+.browser-movie-search-wrapper {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  .container-fluid {
+    max-width: 960px;
+  }
+
+  .col-sm-12 {
+    .form-group {
+      label {
+        font-size: 20px;
+      }
+    }
+  }
+  .form-group {
+    label {
+      margin-bottom: 10px;
+      display: block;
+    }
+    .form-control,
+    .btn-transparent {
+      @include border-radius(1px);
+      background-color: darken($white, 80%);
+      border-color: darken($white, 82%);
+      color: $white;
+      &:focus {
+        @include box-shadow(none);
+      }
+    }
+    .btn-group {
+      display: block;
+
+      > .btn {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: left;
+        position: relative;
+        padding-right:25px;
+        @include border-radius(1px);
+        @include text-overflow();
+
+        &.btn-transparent {
+          color: lighten($black, 60%);
+        }
+
+        .glyphicon {
+          position: absolute;
+          right: 5px;
+          top: 0;
+          bottom: 0;
+          line-height: 32px;
+        }
+      }
+
+      .dropdown-menu {
+        width: 100%;
+        min-width: 1px;
+        margin-top: 0;
+        border: none;
+        height: auto;
+        max-height: 250px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 0;
+        background-color: darken($white, 80%);
+        @include border-radius(0);
+
+        > li {
+
+          &:not(:last-child) {
+            border-bottom: 1px solid darken($white, 82%);
+          }
+          > a {
+            color: $white;
+            padding: 5px 10px;
+            @include text-overflow();
+
+            &:hover,
+            &:focus {
+              color: $white;
+              background-color: darken($white, 84%);
+            }
+          }
+        }
+      }
+    }
+  }
+  .search-btn-wrapper {
+    .btn {
+      margin-top: 37px;
+      font-size: 16px;
+    }
+  }
+}

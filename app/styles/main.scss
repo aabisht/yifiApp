@@ -1,5 +1,4 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-@import "https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,500,500i,700,900";
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 
 @import "variable";
@@ -8,6 +7,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "footer";
 @import "home-slider";
 @import "movie-list";
+@import "search-bar";
 
 
 body {
@@ -21,6 +21,10 @@ a {
     color: lighten($black, 40%);
     text-decoration: none;
   }
+}
+
+.body-container-wrapper {
+  min-height: calc(100vh - 51px - 41px);
 }
 
 .container {

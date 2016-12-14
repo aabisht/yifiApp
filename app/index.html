@@ -11,6 +11,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,500,500i,700,900">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -21,7 +22,7 @@
 
     <header data-ng-include="'/views/global/header.html'" class="header-container-wrapper"></header>
 
-    <div data-ui-view=""></div>
+    <div class="body-container-wrapper" data-ui-view=""></div>
 
     <footer data-ng-include="'/views/global/footer.html'" class="footer-container-wrapper"></footer>
 
@@ -56,6 +57,7 @@
     <script src="scripts/data.factory.js"></script>
     <script src="scripts/constants.js"></script>
     <script src="scripts/controllers/home.controller.js"></script>
+    <script src="scripts/controllers/browse.movies.controller.js"></script>
     <!-- endbuild -->
 </body>
 </html>

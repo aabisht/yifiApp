@@ -27,12 +27,12 @@
             controller: 'HomeController',
             controllerAs: 'HomeCtrl'
           })
-          $urlRouterProvider.otherwise('home');;
-          // .state('about', {
-          //   url: '/about',
-          //   templateUrl: 'views/about.html',
-          //   controller: 'AboutController',
-          //   controllerAs: 'AboutCtrl'
-          // });
+          .state('browse-movies', {
+            url: '/browse-movies',
+            templateUrl: 'views/browse-movies.html',
+            controller: 'BrowserMoviesController',
+            controllerAs: 'BrowserMoviesCtrl'
+          })
+          $urlRouterProvider.otherwise('home');
     }]);
 })();
