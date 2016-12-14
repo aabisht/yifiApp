@@ -17,6 +17,8 @@
 
         var self = this;
 
+        self.dropDownSelect = dropDownSelect;
+
         init();
 
         /**
@@ -27,8 +29,14 @@
          */
         function init() {
 
+
+
         }
 
+        function dropDownSelect(event) {
+          var $this = event.currentTarget;
+          angular.element($this).closest('.dropdown-menu').siblings('.btn').children('span').text(angular.element($this).text());
+        }
 
       }]);
 
