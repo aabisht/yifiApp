@@ -17,7 +17,12 @@
 
         var self = this;
 
-        self.movieID = $stateParams.movieID;
+        self.movieDetails = {
+          movieId: $stateParams.movieID,
+          movieData: [],
+          movieSuggestion: [],
+          movieComments: []
+        };
 
         init();
 
@@ -28,9 +33,28 @@
          * @description function is to use initialize the data
          */
         function init() {
-          var dataURL = CONSTANTS.BASE_API_URL + "movie_details.json?movie_id="+self.movieID;
-
-          console.log(dataURL)
+          var dataURL = CONSTANTS.BASE_API_URL + "movie_details.json?movie_id="+self.movieDetails.movieId;
+          dataFactory.getData(dataURL)
+            .then(function (responseData) {
+              self.movieDetails.movieData = responseData.data.movie;
+            }, function (error) {
+              error.log(error)
+          });
+          dataURL = CONSTANTS.BASE_API_URL + "movie_suggestions.json?movie_id="+self.movieDetails.movieId;
+          dataFactory.getData(dataURL)
+            .then(function (responseData) {
+              self.movieDetails.movieSuggestion = responseData.data;
+            }, function (error) {
+              error.log(error)
+          });
+          // dataURL = CONSTANTS.BASE_API_URL + "movie_comments.json?movie_id="+self.movieDetails.movieId;
+          // dataFactory.getData(dataURL)
+          //   .then(function (responseData) {
+          //     self.movieDetails.movieComments = responseData.data;
+          //   }, function (error) {
+          //     error.log(error)
+          // });
+          console.log(self.movieDetails);
         }
 
       }]);

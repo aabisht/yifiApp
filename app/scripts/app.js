@@ -34,11 +34,11 @@
             controllerAs: 'BrowserMoviesCtrl'
           })
           .state('detailsPage', {
-            url: '/browse-movies/:movieName',
+            url: '/browse-movies/:movieName/:movieID',
             templateUrl: 'views/movie-details.html',
             controller: 'MovieDetailController',
             controllerAs: 'MovieDetailCtrl'
-          })
+          });
           $urlRouterProvider.otherwise('home');
     }]);
 })();
