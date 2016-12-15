@@ -33,6 +33,12 @@
             controller: 'BrowserMoviesController',
             controllerAs: 'BrowserMoviesCtrl'
           })
+          .state('detailsPage', {
+            url: '/browse-movies/:movieName',
+            templateUrl: 'views/movie-details.html',
+            controller: 'MovieDetailController',
+            controllerAs: 'MovieDetailCtrl'
+          })
           $urlRouterProvider.otherwise('home');
     }]);
 })();

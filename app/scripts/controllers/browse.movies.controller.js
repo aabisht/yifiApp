@@ -27,8 +27,6 @@
 
         self.pageNumber = 1;
 
-        // self.movieCount;
-
         self.dropDownSelect = dropDownSelect;
         self.searchMovie = searchMovie;
         self.nextPageData = nextPageData;
@@ -53,14 +51,7 @@
         }
 
         function nextPageData() {
-          var dataURL = CONSTANTS.BASE_API_URL + "list_movies.json?page="+self.pageNumber;
-          dataFactory.getData(dataURL)
-            .then(function (responseData) {
-              self.movieData = responseData.data;
-              self.pageNumber = responseData.data.page_number;
-            }, function (error) {
-              error.log(error)
-            });
+          init();
         }
 
         /**
@@ -91,9 +82,13 @@
          */
         function searchMovie() {
           var dataURL = CONSTANTS.BASE_API_URL + "list_movies.json?query_term="+ self.dropdownOptions.name.trim().replace(/\s/g, '%20') +"&quality="+self.dropdownOptions.quality+"&genre="+self.dropdownOptions.genre+"&minimum_rating="+self.dropdownOptions.rating+"&order_by="+self.dropdownOptions.orderBy;
-
-
-
+          dataFactory.getData(dataURL)
+            .then(function (responseData) {
+              self.movieData = responseData.data;
+              self.pageNumber = responseData.data.page_number;
+            }, function (error) {
+              error.log(error)
+            });
         }
 
       }]);

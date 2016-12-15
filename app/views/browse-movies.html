@@ -141,7 +141,7 @@
                   </div>
                   <h4 class="rating">{{movieData.rating}} / 10</h4>
                   <h4 class="genres" data-ng-repeat="genres in movieData.genres | limitTo: 2">{{genres}}</h4>
-                  <button type="button" class="btn btn-success">Details</button>
+                  <button type="button" class="btn btn-success" data-ui-sref="detailsPage({movieName: movieData.slug, movieID: movieData.id})">Details</button>
                 </figcaption>
               </figure>
             </a>
@@ -149,7 +149,7 @@
               <a href="javascript:;" class="browse-movie-title" title="{{ movieData.title_english }}">{{ movieData.title_english }}</a>
               <div class="browse-movie-year">{{movieData.year}}</div>
               <div class="browse-movie-tags">
-                <a data-ng-repeat="torrentDetails in movieData.torrents" href="{{torrentDetails.torrentDetails}}" title="Download {{ movieData.title_english }} {{ torrentDetails.quality }} Torrent">{{ torrentDetails.quality }}</a>
+                <a data-ng-repeat="torrentDetails in movieData.torrents" href="{{torrentDetails.url}}" title="Download {{ movieData.title_english }} {{ torrentDetails.quality }} Torrent">{{ torrentDetails.quality }}</a>
               </div>
             </div>
           </div>
