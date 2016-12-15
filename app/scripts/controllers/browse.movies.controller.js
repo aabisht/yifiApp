@@ -31,6 +31,7 @@
 
         self.dropDownSelect = dropDownSelect;
         self.searchMovie = searchMovie;
+        self.nextPageData = nextPageData;
 
         init();
 
@@ -41,7 +42,7 @@
          * @description function is to use initialize the data
          */
         function init() {
-          var dataURL = CONSTANTS.BASE_API_URL + "list_movies.json";
+          var dataURL = CONSTANTS.BASE_API_URL + "list_movies.json?page="+self.pageNumber;
           dataFactory.getData(dataURL)
             .then(function (responseData) {
               self.movieData = responseData.data;
@@ -51,6 +52,16 @@
           });
         }
 
+        function nextPageData() {
+          var dataURL = CONSTANTS.BASE_API_URL + "list_movies.json?page="+self.pageNumber;
+          dataFactory.getData(dataURL)
+            .then(function (responseData) {
+              self.movieData = responseData.data;
+              self.pageNumber = responseData.data.page_number;
+            }, function (error) {
+              error.log(error)
+            });
+        }
 
         /**
          * @ngdoc method

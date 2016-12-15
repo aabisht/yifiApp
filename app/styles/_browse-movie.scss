@@ -13,3 +13,40 @@
     }
   }
 }
+
+.movie-pagination-wrapper {
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.pagination {
+  > li {
+    > a {
+      margin-left: 5px;
+      margin-right: 5px;
+      @include border-radius($border-radius-base);
+      @include transition(all 0.2s linear);
+      color: darken($brand-success, 10%);
+    }
+  }
+
+  > .active > a,
+  > .active > span {
+    &,
+    &:hover,
+    &:focus {
+      background-color: $brand-success;
+      border-color: darken($brand-success, 10%);
+    }
+  }
+
+  > li > a,
+  > li > span {
+    &:hover,
+    &:focus {
+      background-color: $brand-success;
+      border-color: darken($brand-success, 10%);
+      color: $white;
+    }
+  }
+}

@@ -126,8 +126,8 @@
           <h3>{{ BrowserMoviesCtrl.movieData.movie_count }} Movies Found</h3>
         </div>
       </div>
-      <div class="row movie-pagination-wrapper">
-        <ul uib-pagination total-items="BrowserMoviesCtrl.movieData.movie_count" ng-model="BrowserMoviesCtrl.pageNumber" max-size="10" class="pagination-sm" boundary-link-numbers="true" rotate="false" force-ellipses="true"></ul>
+      <div class="row movie-pagination-wrapper text-center">
+        <ul data-uib-pagination data-total-items="BrowserMoviesCtrl.movieData.movie_count" data-ng-model="BrowserMoviesCtrl.pageNumber" data-max-size="10" class="pagination" data-boundary-link-numbers="true" data-rotate="false" data-force-ellipses="true" data-ng-change="BrowserMoviesCtrl.nextPageData()"></ul>
       </div>
       <div class="row movie-listing">
         <div class="col-lg-3 col-md-4 col-sm-6 movie-list" data-ng-repeat="movieData in BrowserMoviesCtrl.movieData.movies track by $index" data-ng-class="'movie-list-'+($index+1)">
@@ -154,6 +154,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="row movie-pagination-wrapper text-center">
+        <ul data-uib-pagination data-total-items="BrowserMoviesCtrl.movieData.movie_count" data-ng-model="BrowserMoviesCtrl.pageNumber" data-max-size="10" class="pagination" data-boundary-link-numbers="true" data-rotate="false" data-force-ellipses="true" data-ng-change="BrowserMoviesCtrl.nextPageData()"></ul>
       </div>
     </div>
   </div>
