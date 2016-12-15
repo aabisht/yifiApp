@@ -151,13 +151,16 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .movie-list-9 {
-    display: none;
+.home-movie-listings{
+  @media screen and (min-width: 1200px) {
+    .movie-list-9 {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .movie-list-9 {
+      display: none;
+    }
   }
 }
-@media screen and (max-width: 991px) {
-  .movie-list-9 {
-    display: none;
-  }
-}
+

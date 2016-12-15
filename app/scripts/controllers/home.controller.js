@@ -40,7 +40,7 @@
               // console.log(self.movieData);
             }, function (error) {
               error.log(error)
-            })
+          });
 
         }
 

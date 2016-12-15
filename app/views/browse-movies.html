@@ -9,20 +9,20 @@
               <div class="col-sm-12">
                 <div class="form-group">
                   <label for="movieName">Search Movie Name</label>
-                  <input type="text" id="movieName" class="form-control" placeholder="Enter Movie Name">
+                  <input type="text" id="movieName" class="form-control" placeholder="Enter Movie Name" data-ng-model="BrowserMoviesCtrl.dropdownOptions.name">
                 </div>
               </div>
               <div class="col-sm-3">
                 <div class="form-group">
                   <label for="movieQuality">Quality</label>
-                  <input type="hidden" class="form-control">
+                  <!--<input type="hidden" class="form-control" data-ng-model="BrowserMoviesCtrl.dropdownOptions.quality" >-->
                   <div class="btn-group" uib-dropdown keyboard-nav>
                     <button id="movieQuality" type="button" class="btn btn-transparent" uib-dropdown-toggle><span>All</span><i class="glyphicon glyphicon-chevron-down"></i></button>
                     <ul class="dropdown-menu" uib-dropdown-menu role="menu">
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-quality="all">All</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-quality="720p">720p</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-quality="1080p">1080p</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-quality="3D">3D</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'quality')" data-quality="all">All</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'quality')" data-quality="720p">720p</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'quality')" data-quality="1080p">1080p</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'quality')" data-quality="3D">3D</a></li>
                     </ul>
                   </div>
                 </div>
@@ -30,37 +30,37 @@
               <div class="col-sm-3">
                 <div class="form-group">
                   <label for="movieGenre">Genre</label>
-                  <input type="hidden" class="form-control">
+                  <!--<input type="hidden" class="form-control" data-ng-model="BrowserMoviesCtrl.dropdownOptions.genre">-->
                   <div class="btn-group" uib-dropdown keyboard-nav>
                     <button id="movieGenre" type="button" class="btn btn-transparent" uib-dropdown-toggle><span>All</span><i class="glyphicon glyphicon-chevron-down"></i></button>
                     <ul class="dropdown-menu" uib-dropdown-menu role="menu">
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="all">All</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="action">Action</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="adventure">Adventure</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="animation">Animation</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="biography">Biography</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="comedy">Comedy</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="crime">Crime</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="documentary">Documentary</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="drama">Drama</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="family">Family</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="fantasy">Fantasy</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="film-noir">Film-Noir</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="game-show">Game-Show</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="history">History</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="horror">Horror</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="music">Music</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="musical">Musical</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="mystery">Mystery</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="news">News</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="reality-tv">Reality-TV</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="romance">Romance</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="sci-fi">Sci-Fi</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="sport">Sport</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="talk-show">Talk-Show</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="thriller">Thriller</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="war">War</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-title="western">Western</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="all">All</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="action">Action</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="adventure">Adventure</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="animation">Animation</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="biography">Biography</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="comedy">Comedy</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="crime">Crime</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="documentary">Documentary</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="drama">Drama</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="family">Family</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="fantasy">Fantasy</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="film-noir">Film-Noir</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="game-show">Game-Show</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="history">History</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="horror">Horror</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="music">Music</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="musical">Musical</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="mystery">Mystery</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="news">News</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="reality-tv">Reality-TV</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="romance">Romance</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="sci-fi">Sci-Fi</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="sport">Sport</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="talk-show">Talk-Show</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="thriller">Thriller</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="war">War</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'genre')" data-title="western">Western</a></li>
                     </ul>
                   </div>
                 </div>
@@ -68,20 +68,20 @@
               <div class="col-sm-3">
                 <div class="form-group">
                   <label for="movieRating">Rating</label>
-                  <input type="hidden" class="form-control">
+                  <!--<input type="hidden" class="form-control">-->
                   <div class="btn-group" uib-dropdown keyboard-nav>
                     <button id="movieRating" type="button" class="btn btn-transparent" uib-dropdown-toggle><span>All</span><i class="glyphicon glyphicon-chevron-down"></i></button>
                     <ul class="dropdown-menu" uib-dropdown-menu role="menu">
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-rating="0">All</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-rating="9">9+</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-rating="8">8+</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-rating="7">7+</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-rating="6">6+</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-rating="5">5+</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-rating="4">4+</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-rating="3">3+</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-rating="2">2+</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-rating="1">1+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'rating')" data-rating="0">All</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'rating')" data-rating="9">9+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'rating')" data-rating="8">8+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'rating')" data-rating="7">7+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'rating')" data-rating="6">6+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'rating')" data-rating="5">5+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'rating')" data-rating="4">4+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'rating')" data-rating="3">3+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'rating')" data-rating="2">2+</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'rating')" data-rating="1">1+</a></li>
                     </ul>
                   </div>
                 </div>
@@ -89,29 +89,72 @@
               <div class="col-sm-3">
                 <div class="form-group">
                   <label for="movieOrderBy">Order By</label>
-                  <input type="hidden" class="form-control">
+                  <!--<input type="hidden" class="form-control">-->
                   <div class="btn-group" uib-dropdown keyboard-nav>
                     <button id="movieOrderBy" type="button" class="btn btn-transparent" uib-dropdown-toggle><span>Latest</span><i class="glyphicon glyphicon-chevron-down"></i></button>
                     <ul class="dropdown-menu" uib-dropdown-menu role="menu">
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-order="latest">Latest</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-order="oldest">Oldest</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-order="seeds">Seeds</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-order="peers">Peers</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-order="year">Year</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-order="rating">Rating</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-order="likes">Likes</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-order="alphabetical">Alphabetical</a></li>
-                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event)" data-order="downloads">Downloads</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'orderBy')" data-order="latest">Latest</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'orderBy')" data-order="oldest">Oldest</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'orderBy')" data-order="seeds">Seeds</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'orderBy')" data-order="peers">Peers</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'orderBy')" data-order="year">Year</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'orderBy')" data-order="rating">Rating</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'orderBy')" data-order="likes">Likes</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'orderBy')" data-order="alphabetical">Alphabetical</a></li>
+                      <li role="menuitem"><a href="javascript:;" data-ng-click="BrowserMoviesCtrl.dropDownSelect($event, 'orderBy')" data-order="downloads">Downloads</a></li>
+                    </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-sm-3 search-btn-wrapper">
-            <button type="button" class="btn btn-block btn-success">Search</button>
+            <button type="button" class="btn btn-block btn-success" data-ng-click="BrowserMoviesCtrl.searchMovie()">Search</button>
           </div>
         </div>
       </form>
+    </div>
+  </div>
+</section>
+
+<!--Home Movie Listing-->
+<section class="browse-movie-listings-wrapper light-grey-bg">
+  <div class="browse-movie-listings">
+    <div class="container">
+      <div class="row page-title">
+        <div class="col-sm-12 text-center">
+          <h3>{{ BrowserMoviesCtrl.movieData.movie_count }} Movies Found</h3>
+        </div>
+      </div>
+      <div class="row movie-pagination-wrapper">
+        <ul uib-pagination total-items="BrowserMoviesCtrl.movieData.movie_count" ng-model="BrowserMoviesCtrl.pageNumber" max-size="10" class="pagination-sm" boundary-link-numbers="true" rotate="false" force-ellipses="true"></ul>
+      </div>
+      <div class="row movie-listing">
+        <div class="col-lg-3 col-md-4 col-sm-6 movie-list" data-ng-repeat="movieData in BrowserMoviesCtrl.movieData.movies track by $index" data-ng-class="'movie-list-'+($index+1)">
+          <div class="movie-wrapper text-center">
+            <a href="javascript:;" class="browse-movie-link">
+              <figure>
+                <img src="" data-ng-src="{{ movieData.medium_cover_image }}" alt="{{ movieData.title_long }}">
+                <figcaption class="text-center">
+                  <div class="icon-star-wrapper">
+                    <i class="glyphicon glyphicon-star-empty"></i>
+                  </div>
+                  <h4 class="rating">{{movieData.rating}} / 10</h4>
+                  <h4 class="genres" data-ng-repeat="genres in movieData.genres | limitTo: 2">{{genres}}</h4>
+                  <button type="button" class="btn btn-success">Details</button>
+                </figcaption>
+              </figure>
+            </a>
+            <div class="browse-movie-bottom">
+              <a href="javascript:;" class="browse-movie-title" title="{{ movieData.title_english }}">{{ movieData.title_english }}</a>
+              <div class="browse-movie-year">{{movieData.year}}</div>
+              <div class="browse-movie-tags">
+                <a data-ng-repeat="torrentDetails in movieData.torrents" href="{{torrentDetails.torrentDetails}}" title="Download {{ movieData.title_english }} {{ torrentDetails.quality }} Torrent">{{ torrentDetails.quality }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
