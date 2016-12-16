@@ -39,4 +39,12 @@
 
     }])
 
+    .filter('trusted', ['$sce',
+      function ($sce) {
+        return function (videoID) {
+          return $sce.trustAsResourceUrl("https://www.youtube.com/embed/"+videoID);
+        }
+      }])
+
+
 })();

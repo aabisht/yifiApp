@@ -21,7 +21,8 @@
           movieId: $stateParams.movieID,
           movieData: [],
           movieSuggestion: [],
-          movieComments: []
+          movieComments: [],
+          sliderConfiguration: []
         };
 
         init();
@@ -33,7 +34,15 @@
          * @description function is to use initialize the data
          */
         function init() {
+
+          self.movieDetails.sliderConfiguration = {
+            active: 0,
+            myInterval: 5000,
+            noWrapSlides: false
+          }
+
           var dataURL = CONSTANTS.BASE_API_URL + "movie_details.json?movie_id="+self.movieDetails.movieId;
+          console.log(dataURL);
           dataFactory.getData(dataURL)
             .then(function (responseData) {
               self.movieDetails.movieData = responseData.data.movie;

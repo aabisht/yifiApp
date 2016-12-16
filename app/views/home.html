@@ -1,6 +1,6 @@
 <!--Home Movie Slider-->
 <section class="home-slider-container-wrapper">
-  <div class="home-slider-container" data-nf-if="HomeCtrl.movieData">
+  <div class="home-slider-container background-wrapper" data-nf-if="HomeCtrl.movieData">
     <div data-uib-carousel data-active="HomeCtrl.sliderConfiguration.active" data-interval="HomeCtrl.sliderConfiguration.interval" data-no-wrap="HomeCtrl.sliderConfiguration.noWrapSlides">
       <div data-uib-slide data-ng-repeat="sliderMovieData in HomeCtrl.movieData | orderBy: '-rating' | limitTo: 5 track by $index" index="$index">
         <div class="background-image" style="background-image: url('{{sliderMovieData.background_image_original}}')"></div>

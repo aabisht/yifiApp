@@ -1,0 +1,126 @@
+<section class="movie-detail-header-wrapper background-wrapper" data-ng-if="MovieDetailCtrl.movieDetails.movieData">
+  <div class="background-image" style="background-image: url({{MovieDetailCtrl.movieDetails.movieData.background_image}})"></div>
+  <div class="background-overlay"></div>
+  <div class="container background-content">
+    <div class="row">
+      <div class="col-md-3 col-sm-5">
+        <div class="cell-wrapper movie-poster">
+          <div class="text-center">
+            <img class="img-thumbnail" src="" ng-src="{{ MovieDetailCtrl.movieDetails.movieData.large_cover_image }}" alt="{{ MovieDetailCtrl.movieDetails.movieData.title }}">
+          </div>
+          <button type="button" class="btn btn-block btn-success"><i class="glyphicon glyphicon-log-in rotate-90deg"></i>Download</button>
+        </div>
+      </div>
+      <div class="col-md-5 col-sm-7">
+        <div class="cell-wrapper movie-info">
+          <h1><strong>{{ MovieDetailCtrl.movieDetails.movieData.title }}</strong></h1>
+          <h3>{{ MovieDetailCtrl.movieDetails.movieData.year }}</h3>
+          <h4 class="genre-wrapper">
+            <span data-ng-repeat="genre in MovieDetailCtrl.movieDetails.movieData.genres">{{ genre }}</span>
+          </h4>
+          <p>{{ MovieDetailCtrl.movieDetails.movieData.description_full }}</p>
+          <ul class="list-unstyled movie-rating">
+            <li><i class="glyphicon glyphicon-heart"></i> <span>{{ MovieDetailCtrl.movieDetails.movieData.like_count }}</span></li>
+            <li><i class="glyphicon glyphicon-star-empty"></i> <span>{{ MovieDetailCtrl.movieDetails.movieData.rating }}</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <div class="cell-wrapper movie-trailer">
+          <div class="video-container">
+            <iframe data-ng-src="{{MovieDetailCtrl.movieDetails.movieData.yt_trailer_code | trusted}}" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="light-grey movie-detail-tech">
+  <div class="movie-detail-tech-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row page-title">
+            <div class="col-sm-12">
+              <h3>Tech specs</h3>
+            </div>
+          </div>
+          <div class="row movie-tech-info-wrapper">
+            <div class="col-sm-12">
+              <uib-tabset active="active" class="movie-tech-info-tabber">
+                <uib-tab data-ng-repeat="techInfo in MovieDetailCtrl.movieDetails.movieData.torrents track by $index" data-index="$index">
+                  <uib-tab-heading>
+                    <div class="tab-heading">
+                      <i class="glyphicon" data-ng-class="{'glyphicon-sd-video': techInfo.quality === '720p', 'glyphicon-hd-video': techInfo.quality === '1080p', 'glyphicon-sunglasses': techInfo.quality === '3D'}"></i>
+                      {{ techInfo.quality }}
+                    </div>
+                  </uib-tab-heading>
+                  <div class="tab-content-wrapper">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <i class="glyphicon glyphicon-hdd"></i>
+                        <span>{{ techInfo.size }}</span>
+                      </div>
+                      <div class="col-sm-4">
+                        <i class="glyphicon glyphicon glyphicon-fullscreen"></i>
+                        <span>{{ techInfo.quality }}</span>
+                      </div>
+                      <div class="col-sm-4">
+                        <i class="glyphicon glyphicon glyphicon-volume-up"></i>
+                        <span>{{ MovieDetailCtrl.movieDetails.movieData.language }}</span>
+                      </div>
+                      <div class="col-sm-4">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                        <span>{{ MovieDetailCtrl.movieDetails.movieData.mpa_rating }}</span>
+                      </div>
+                      <div class="col-sm-4">
+                        <i class="glyphicon glyphicon-subtitles"></i>
+                        <a href="http://www.yifysubtitles.com/movie-imdb/{{ MovieDetailCtrl.movieDetails.movieData.imdb_code }}" target="_blank">Subtitles</a>
+                      </div>
+                      <div class="col-sm-4">
+                        <i class="glyphicon glyphicon-scale"></i>
+                        <span>{{ techInfo.seeds }}/{{ techInfo.peers }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </uib-tab>
+              </uib-tabset>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row page-title">
+            <div class="col-sm-12">
+              <h3>Related Movies</h3>
+            </div>
+          </div>
+          <div class="row related-movies-wrapper" data-nf-if="MovieDetailCtrl.movieDetails.movieSuggestion">
+            <div class="col-sm-12">
+              <div class="background-wrapper" data-uib-carousel data-active="MovieDetailCtrl.movieDetails.sliderConfiguration.active" data-interval="MovieDetailCtrl.movieDetails.sliderConfiguration.interval" data-no-wrap="MovieDetailCtrl.movieDetails.sliderConfiguration.noWrapSlides">
+                <div data-uib-slide data-ng-repeat="sliderMovieData in MovieDetailCtrl.movieDetails.movieSuggestion.movies track by $index" index="$index">
+                  <div class="background-image" style="background-image: url('{{sliderMovieData.background_image_original}}')"></div>
+                  <div class="background-overlay"></div>
+                  <div class="slider-content-wrapper background-content">
+                    <div class="slider-content text-center">
+                      <h2 class="slider-title text-uppercase">{{ sliderMovieData.title_english }}</h2>
+                      <div class="slider-movie-image-wrapper">
+                        <img class="slider-movie-image" data-ng-src="{{ sliderMovieData.medium_cover_image }}" alt=" {{ sliderMovieData.title_long }} ">
+                      </div>
+                      <h4><strong>Release Date: </strong> {{ sliderMovieData.year }}</h4>
+                      <h4><strong>Movie Rating: </strong> {{ sliderMovieData.rating }}</h4>
+                      <div class="list-category-wrapper" data-ng-if="sliderMovieData.genres">
+                        <ul class="list-category list-inline">
+                          <li data-ng-repeat="generName in sliderMovieData.genres"><i>{{ generName }}</i></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,141 @@
+.movie-detail-header-wrapper {
+  padding: 40px 0;
+
+  .movie-poster {
+    .btn {
+      margin-top: 10px;
+      font-size: 18px;
+
+      .glyphicon {
+        margin-right: 8px;
+      }
+    }
+  }
+  .movie-trailer {
+    margin-top: 60px;
+  }
+
+  .movie-info {
+    .genre-wrapper {
+      span {
+        &:not(:first-child):before {
+          content: "/";
+          padding: 0 5px;
+        }
+      }
+    }
+
+    .movie-rating {
+      li {
+        line-height: 30px;
+        vertical-align: middle;
+        font-size: 16px;
+        margin-bottom: 10px;
+
+        > span {
+          line-height: 30px;
+          display: inline-block;
+          font-size: 20px;
+          font-weight: 500;
+        }
+      }
+      .glyphicon {
+        width: 80px;
+        text-align: center;
+        display: inline-block;
+        color: $brand-success;
+        font-size: 24px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+
+  iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.movie-detail-tech {
+  padding: 40px 0;
+  .page-title {
+    margin-bottom: 30px;
+  }
+}
+
+.movie-tech-info-tabber {
+  .nav-tabs {
+    > li {
+      > a {
+        font-size: 18px;
+        padding: 8px 40px;
+        margin-right: 5px;
+        @include text-overflow();
+        overflow: visible;
+        font-weight: 700;
+        position: relative;
+        @include transition(background-color 0.2s linear);
+
+        .glyphicon {
+          display: block;
+          text-align: center;
+          margin-bottom: 4px;
+          font-size: 26px;
+        }
+
+        .tab-heading {
+          @include transition(all 0.2s linear);
+        }
+      }
+      &.active > a {
+        &,
+        &:hover,
+        &:focus {
+          border: none;
+          background-color: $brand-success;
+          border-bottom: 1px solid $brand-success;
+          color: #fff;
+        }
+      }
+      &.active > a {
+        &:before {
+          content: "";
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-top: 10px solid $brand-success;
+          position: absolute;
+          bottom: -10px;
+          width: 0;
+          height: 0;
+          left: calc(50% - 10px);
+        }
+        .tab-heading {
+          @include translate3d(0, 7px, 0);
+        }
+      }
+    }
+  }
+  .tab-content-wrapper {
+    padding: 30px;
+  }
+}
+
+.related-movies-wrapper {
+  .slider-content {
+    padding: 1px 10px;
+  }
+  .carousel-indicators {
+    display: none;
+  }
+}

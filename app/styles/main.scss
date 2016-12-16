@@ -9,6 +9,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "movie-list";
 @import "search-bar";
 @import "browse-movie";
+@import "movie-details";
 
 
 body {
@@ -26,6 +27,10 @@ a {
 
 .body-container-wrapper {
   min-height: calc(100vh - 51px - 41px);
+}
+
+.rotate-90deg {
+  @include rotate(90deg);
 }
 
 .container {
