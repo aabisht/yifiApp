@@ -1,7 +1,7 @@
 # yifi-app
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.13.12.16.
+version 0.19.12.16.
 
 ## Install 
 Run `npm install` and then `bower install`
@@ -13,3 +13,8 @@ Run `grunt` for building and `grunt serve` for preview.
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
+
+
+## Preview 
+
+The preview of the app can be seen on [yifi-web-app](https://yifi-web.herokuapp.com/#/home)
