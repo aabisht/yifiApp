@@ -5,9 +5,9 @@
       <div data-uib-slide data-ng-repeat="sliderMovieData in HomeCtrl.movieData | orderBy: '-rating' | limitTo: 5 track by $index" index="$index">
         <div class="background-image" style="background-image: url('{{sliderMovieData.background_image_original}}')"></div>
         <div class="background-overlay"></div>
-        <div class="slider-content-wrapper">
+        <div class="slider-content-wrapper background-content">
           <div class="slider-content text-center">
-            <h2 class="slider-title text-uppercase">{{ sliderMovieData.title_english }}</h2>
+            <h2 class="slider-title text-uppercase"><a href="javascript:;" data-ui-sref="detailsPage({movieName: sliderMovieData.slug, movieID: sliderMovieData.id})">{{ sliderMovieData.title_english }}</a></h2>
             <div class="slider-movie-image-wrapper">
               <img class="slider-movie-image" data-ng-src="{{ sliderMovieData.large_cover_image }}" alt=" {{ sliderMovieData.title_long }} ">
             </div>
@@ -48,12 +48,12 @@
                   </div>
                   <h4 class="rating">{{movieData.rating}} / 10</h4>
                   <h4 class="genres" data-ng-repeat="genres in movieData.genres | limitTo: 2">{{genres}}</h4>
-                  <button type="button" class="btn btn-success">Details</button>
+                  <button type="button" class="btn btn-success" data-ui-sref="detailsPage({movieName: movieData.slug, movieID: movieData.id})">Details</button>
                 </figcaption>
               </figure>
             </a>
             <div class="browse-movie-bottom">
-              <a href="javascript:;" class="browse-movie-title" title="{{ movieData.title_english }}">{{ movieData.title_english }}</a>
+              <a href="javascript:;" class="browse-movie-title" title="{{ movieData.title_english }}" data-ui-sref="detailsPage({movieName: movieData.slug, movieID: movieData.id})">{{ movieData.title_english }}</a>
               <div class="browse-movie-year">{{movieData.year}}</div>
               <div class="browse-movie-tags">
                 <a data-ng-repeat="torrentDetails in movieData.torrents" href="{{torrentDetails.torrentDetails}}" title="Download {{ movieData.title_english }} {{ torrentDetails.quality }} Torrent">{{ torrentDetails.quality }}</a>

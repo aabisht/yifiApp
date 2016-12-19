@@ -98,5 +98,11 @@
   .background-content {
     position: relative;
     z-index: 9;
+
+    h2 {
+      a {
+        color: inherit;
+      }
+    }
   }
 }

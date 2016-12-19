@@ -146,7 +146,7 @@
               </figure>
             </a>
             <div class="browse-movie-bottom">
-              <a href="javascript:;" class="browse-movie-title" title="{{ movieData.title_english }}">{{ movieData.title_english }}</a>
+              <a href="javascript:;" class="browse-movie-title" title="{{ movieData.title_english }}" data-ui-sref="detailsPage({movieName: movieData.slug, movieID: movieData.id})">{{ movieData.title_english }}</a>
               <div class="browse-movie-year">{{movieData.year}}</div>
               <div class="browse-movie-tags">
                 <a data-ng-repeat="torrentDetails in movieData.torrents" href="{{torrentDetails.url}}" title="Download {{ movieData.title_english }} {{ torrentDetails.quality }} Torrent">{{ torrentDetails.quality }}</a>

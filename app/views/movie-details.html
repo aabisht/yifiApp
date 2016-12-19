@@ -102,7 +102,7 @@
                   <div class="background-overlay"></div>
                   <div class="slider-content-wrapper background-content">
                     <div class="slider-content text-center">
-                      <h2 class="slider-title text-uppercase">{{ sliderMovieData.title_english }}</h2>
+                      <h2 class="slider-title text-uppercase" ><a href="javascript:;" data-ui-sref="detailsPage({movieName: sliderMovieData.slug, movieID: sliderMovieData.id})">{{ sliderMovieData.title_english }}</a></h2>
                       <div class="slider-movie-image-wrapper">
                         <img class="slider-movie-image" data-ng-src="{{ sliderMovieData.medium_cover_image }}" alt=" {{ sliderMovieData.title_long }} ">
                       </div>
