@@ -12,8 +12,8 @@
 
   angular
     .module('yifiAppApp')
-    .controller('MovieDetailController', ['dataFactory', 'CONSTANTS', '$stateParams',
-      function (dataFactory, CONSTANTS, $stateParams) {
+    .controller('MovieDetailController', ['dataFactory', 'CONSTANTS', '$stateParams', '$uibModal',
+      function (dataFactory, CONSTANTS, $stateParams, $uibModal) {
 
         var self = this;
 
@@ -25,6 +25,8 @@
           movieIMDB_Data: [],
           sliderConfiguration: []
         };
+
+        self.modalOpen = modalOpen;
 
         init();
 
@@ -63,6 +65,26 @@
               console.log(self.movieDetails);
             }, function (error) {
               error.log(error);
+          })
+        }
+
+        function modalOpen() {
+          $uibModal.open({
+            templateUrl: 'downloadTorrent.html',
+            ariaLabelledBy: 'modal-title-top',
+            ariaDescribedBy: 'modal-body-top',
+            controller: function () {
+              var self = this;
+              var dataURL = CONSTANTS.BASE_API_URL + "movie_details.json?movie_id="+$stateParams.movieID;
+              dataFactory.getData(dataURL)
+                .then(function (responseData) {
+                  self.torrentData = responseData.data.movie.torrents;
+                  console.log(self.torrentData);
+                }, function (error) {
+                  error.log(error)
+                });
+            },
+            controllerAs: 'MovieDetailCtrl'
           })
         }
 

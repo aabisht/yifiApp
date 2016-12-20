@@ -8,7 +8,7 @@
           <div class="text-center">
             <img class="img-thumbnail" src="" ng-src="{{ MovieDetailCtrl.movieDetails.movieData.large_cover_image }}" alt="{{ MovieDetailCtrl.movieDetails.movieData.title }}">
           </div>
-          <button type="button" class="btn btn-block btn-success"><i class="glyphicon glyphicon-log-in rotate-90deg"></i>Download</button>
+          <button type="button" class="btn btn-block btn-success" data-ng-click="MovieDetailCtrl.modalOpen()"><i class="glyphicon glyphicon-log-in rotate-90deg"></i>Download</button>
         </div>
       </div>
       <div class="col-md-5 col-sm-7">
@@ -47,7 +47,7 @@
           </div>
           <div class="row movie-cast-wrapper">
             <div class="col-sm-12">
-              <table class="table table-responsive">
+              <table class="table table-responsive table-striped">
                 <thead>
                   <tr>
                     <th></th>
@@ -152,19 +152,47 @@
             </div>
           </div>
         </div>
-        <div class="row page-title">
-          <div class="col-sm-12">
-            <h3>Review</h3>
-          </div>
+      </div>
+      <div class="row page-title">
+        <div class="col-sm-12">
+          <h3>Review</h3>
         </div>
-        <div class="row movie-review-wrapper">
-          <div class="col-sm-12" data-ng-repeat="reviewData in MovieDetailCtrl.movieDetails.movieIMDB_Data.comments">
-            <h4>{{ reviewData.title }}</h4>
-            <h5>{{ reviewData.comment_meta }}</h5>
-            <p data-ng-bind-html="reviewData.commnent_text"></p>
-          </div>
+      </div>
+      <div class="row movie-review-wrapper">
+        <div class="col-sm-12" data-ng-repeat="reviewData in MovieDetailCtrl.movieDetails.movieIMDB_Data.comments">
+          <h4>{{ reviewData.title }}</h4>
+          <h5>{{ reviewData.comment_meta }}</h5>
+          <p data-ng-bind-html="reviewData.commnent_text"></p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script type="text/ng-template" id="downloadTorrent.html">
+  <div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Select movie quality</h3>
+  </div>
+  <div class="modal-body torrent-download-content-wrapper" id="modal-body">
+    <div class="table-wrapper">
+      <div class="table-cell-wrapper torrent-download-content" data-ng-repeat="torrentData in MovieDetailCtrl.torrentData">
+        <div class="quality" data-ng-if="torrentData.quality === '3D' ">
+          <span class="icon-3d"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span></span>
+        </div>
+        <div class="quality" data-ng-if="torrentData.quality === '720p' ">
+          <span class="icon-720p"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+        </div>
+        <div class="quality" data-ng-if="torrentData.quality === '1080p' ">
+          <span class="icon-1080p"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span></span>
+        </div>
+        <div class="file-size">
+          <h5>File size</h5>
+          <p><strong>{{ torrentData.size }}</strong></p>
+        </div>
+        <div class="download">
+          <a href="{{ torrentData.url }}" class="btn btn-block btn-success"><i class="glyphicon glyphicon-log-in rotate-90deg"></i>Download</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>

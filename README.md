@@ -1,7 +1,7 @@
 # yifi-app
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.19.12.16.
+version 1.0.0.
 
 ## Install 
 Run `npm install` and then `bower install`

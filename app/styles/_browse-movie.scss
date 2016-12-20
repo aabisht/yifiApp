@@ -58,3 +58,33 @@
     }
   }
 }
+
+.table-wrapper {
+  display: table;
+  width: 100%;
+
+  .table-cell-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.torrent-download-content-wrapper {
+
+  .torrent-download-content {
+    text-align: center;
+
+    .quality > span {
+      &[class^="icon-"], &[class*=" icon-"]{
+        font-size: 60px;
+      }
+    }
+
+    & + .torrent-download-content {
+      border-left: 1px solid darken($white, 10%);
+    }
+  }
+
+}
