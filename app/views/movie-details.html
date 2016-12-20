@@ -42,6 +42,38 @@
         <div class="col-md-8">
           <div class="row page-title">
             <div class="col-sm-12">
+              <h3>Cast</h3>
+            </div>
+          </div>
+          <div class="row movie-cast-wrapper">
+            <div class="col-sm-12">
+              <table class="table table-responsive">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Character</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-ng-repeat="castDetails in MovieDetailCtrl.movieDetails.movieIMDB_Data.cast_details">
+                    <th>
+                      <img src="" data-ng-src="{{ castDetails.img }}" alt="{{ castDetails.name +' as '+ castDetails.character }}" data-ng-if="castDetails.img">
+                      <img src="http://ia.media-imdb.com/images/G/01/imdb/images/nopicture/32x44/name-2138558783._CB522318235_.png" alt="{{ castDetails.name +' as '+ castDetails.character }}" data-ng-if="!(castDetails.img)">
+                    </th>
+                    <th>
+                      {{ castDetails.name }}
+                    </th>
+                    <th>
+                      {{ castDetails.character }}
+                    </th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row page-title">
+            <div class="col-sm-12">
               <h3>Tech specs</h3>
             </div>
           </div>
@@ -102,7 +134,7 @@
                   <div class="background-overlay"></div>
                   <div class="slider-content-wrapper background-content">
                     <div class="slider-content text-center">
-                      <h2 class="slider-title text-uppercase" ><a href="javascript:;" data-ui-sref="detailsPage({movieName: sliderMovieData.slug, movieID: sliderMovieData.id})">{{ sliderMovieData.title_english }}</a></h2>
+                      <h2 class="slider-title text-uppercase" ><a href="javascript:;" data-ui-sref="detailsPage({movieName: sliderMovieData.slug, movieID: sliderMovieData.id, imdbCode: sliderMovieData.imdb_code})">{{ sliderMovieData.title_english }}</a></h2>
                       <div class="slider-movie-image-wrapper">
                         <img class="slider-movie-image" data-ng-src="{{ sliderMovieData.medium_cover_image }}" alt=" {{ sliderMovieData.title_long }} ">
                       </div>
@@ -118,6 +150,18 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="row page-title">
+          <div class="col-sm-12">
+            <h3>Review</h3>
+          </div>
+        </div>
+        <div class="row movie-review-wrapper">
+          <div class="col-sm-12" data-ng-repeat="reviewData in MovieDetailCtrl.movieDetails.movieIMDB_Data.comments">
+            <h4>{{ reviewData.title }}</h4>
+            <h5>{{ reviewData.comment_meta }}</h5>
+            <p data-ng-bind-html="reviewData.commnent_text"></p>
           </div>
         </div>
       </div>

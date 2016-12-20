@@ -39,7 +39,8 @@
             controller: 'MovieDetailController',
             controllerAs: 'MovieDetailCtrl',
             params: {
-              movieID: ''
+              movieID: '',
+              imdbCode: ''
             }
           });
           $urlRouterProvider.otherwise('home');

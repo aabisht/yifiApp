@@ -17,6 +17,8 @@
 .movie-pagination-wrapper {
   margin-bottom: 15px;
   margin-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .pagination {
@@ -27,6 +29,12 @@
       @include border-radius($border-radius-base);
       @include transition(all 0.2s linear);
       color: darken($brand-success, 10%);
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    >a,span {
+      float: none;
+      display: inline-block;
     }
   }
 

@@ -151,3 +151,15 @@
     display: none;
   }
 }
+
+.movie-cast-wrapper {
+  .table {
+    > tbody {
+      > tr {
+        > th {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
